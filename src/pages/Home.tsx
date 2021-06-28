@@ -44,7 +44,9 @@ const Home: React.FC = () => {
         <Button
           text="FLOOD!"
           onClick={() => {
-            KahootLogic.flood(pin, amount);
+            (async () => {
+              await KahootLogic.flood(pin, amount);
+            })();
           }}
         />
       </div>

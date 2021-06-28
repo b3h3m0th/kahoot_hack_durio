@@ -7,11 +7,6 @@ export default class KahootLogic {
         {
           pin,
           amount,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
         }
       );
 
