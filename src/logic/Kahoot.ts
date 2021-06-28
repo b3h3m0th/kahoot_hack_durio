@@ -1,15 +1,17 @@
-const Kahoot = require("kahoot.js-updated");
-const Kahoot2 = require("kahoot.js-api");
+const Kahoot = require("kahoot.js");
 
 export default class KahootLogic {
   public clients: Array<any> = [];
-  constructor() {}
 
-  flood(amount: number): Promise<any> {
-    return new Promise((resolve, reject) => {
-      [...new Array(amount)].forEach((_, i: number) => {
-        this.clients.push(new Kahoot());
-      });
+  flood(pin: number, amount: number) {
+    console.log(pin, amount);
+    let client;
+    [...new Array(amount)].forEach((_, i: number) => {
+      console.log(i);
+      client = new Kahoot();
+      client.join(pin, i + 1);
+      client.on("Joined", () => console.log("joined"));
+      this.clients.push(client);
     });
   }
 }

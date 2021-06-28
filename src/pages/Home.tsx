@@ -42,7 +42,7 @@ const Home: React.FC = () => {
           max={config.maxBotAmount}
           min={1}
         />
-        <Button text="FLOOD!" onClick={() => kahootLogic.flood(amount)} />
+        <Button text="FLOOD!" onClick={() => kahootLogic.flood(pin, amount)} />
       </div>
     </div>
   );

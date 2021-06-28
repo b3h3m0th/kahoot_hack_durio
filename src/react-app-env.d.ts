@@ -1,2 +1,2 @@
 /// <reference types="react-scripts" />
-// declare module "react/jsx-runtime";
+// declare module "kahoot.js-updated-fixed";
