@@ -1,4 +1,6 @@
-const Kahoot = require("kahoot.js");
+import { sleep } from "../util/time";
+
+const Kahoot = require("kahoot.js-updated");
 
 export default class KahootLogic {
   public clients: Array<any> = [];
@@ -12,6 +14,7 @@ export default class KahootLogic {
       client.join(pin, i + 1);
       client.on("Joined", () => console.log("joined"));
       this.clients.push(client);
+      sleep(200);
     });
   }
 }
