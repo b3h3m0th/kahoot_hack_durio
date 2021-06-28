@@ -4,7 +4,6 @@ import Input from "../components/Input/Input";
 import config from "../config";
 import Button from "../components/Button/Button";
 import KahootLogic from "../logic/Kahoot";
-const kahootLogic = new KahootLogic();
 
 const Home: React.FC = () => {
   const [pin, setPin] = useState<number>(1234567);
@@ -45,7 +44,7 @@ const Home: React.FC = () => {
         <Button
           text="FLOOD!"
           onClick={() => {
-            kahootLogic.flood(pin, amount);
+            KahootLogic.flood(pin, amount);
           }}
         />
       </div>

@@ -1,27 +1,23 @@
-import { sleep } from "../util/time";
-
-const Kahoot = require("kahoot.js-updated");
-
+import axios from "axios";
 export default class KahootLogic {
-  public clients: Array<any> = [];
+  static async flood(pin: number, amount: number): Promise<any> {
+    try {
+      const floodResponse = await axios.post(
+        `${`${process.env.REACT_APP_SERVER_URL}/flood`}`,
+        {
+          pin,
+          amount,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-  flood(pin: number, amount: number) {
-    // console.log(pin, amount);
-    // let client;
-    // [...new Array(amount)].forEach(async (_, i: number) => {
-    //   console.log(i);
-    //   client = new Kahoot();
-    //   client.join(pin, i + 1);
-    //   client.on("Joined", () => console.log("joined"));
-    //   this.clients.push(client);
-    //   await sleep(200);
-    // });
-    const client = new Kahoot();
-    console.log(client);
-    client.join(pin, "Sandro");
-    console.log(client);
-    client.on("Joined", () => {
-      console.log("YESSSS FUCK YESS");
-    });
+      return floodResponse.data;
+    } catch (err) {
+      console.log(err);
+    }
   }
 }

@@ -11,6 +11,8 @@ import config from "./config";
 // pages
 import Home from "./pages/Home";
 
+require("dotenv").config();
+
 const pages: { [key: string]: React.FC<any> } = {
   home: Home,
 };
