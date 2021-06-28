@@ -4,12 +4,12 @@ import Input from "../components/Input/Input";
 import config from "../config";
 import Button from "../components/Button/Button";
 import KahootLogic from "../logic/Kahoot";
+const kahootLogic = new KahootLogic();
 
 const Home: React.FC = () => {
   const [pin, setPin] = useState<number>(1234567);
-  const [amount, setAmount] = useState<number>(0);
+  const [amount, setAmount] = useState<number>(1);
 
-  const kahootLogic = new KahootLogic();
   return (
     <div className="home">
       <h1 className="home__title">Kahoot Hack Durio</h1>
@@ -42,7 +42,12 @@ const Home: React.FC = () => {
           max={config.maxBotAmount}
           min={1}
         />
-        <Button text="FLOOD!" onClick={() => kahootLogic.flood(pin, amount)} />
+        <Button
+          text="FLOOD!"
+          onClick={() => {
+            kahootLogic.flood(pin, amount);
+          }}
+        />
       </div>
     </div>
   );
