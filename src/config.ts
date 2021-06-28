@@ -3,4 +3,5 @@ export default {
   kahootPlayURL: "https://kahoot.it",
   _v: "_v2",
   pinLength: 7,
+  maxBotAmount: 50,
 } as const;

@@ -1,2 +1,7 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+
 :root {
+  --color-purple: $color-purple;
+  --font-primary: $font-montserrat;
 }
