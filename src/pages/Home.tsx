@@ -5,6 +5,12 @@ import config from "../config";
 import Button from "../components/Button/Button";
 import Kahoot, { FloodResult } from "../logic/Kahoot";
 
+const homeVideos = [
+  "https://kahoot.com/files/2019/07/kc_1.webm",
+  "https://kahoot.com/files/2019/07/kc2_2b.webm",
+  "https://kahoot.com/files/2019/07/kc_3.webm",
+] as const;
+
 const Home: React.FC = () => {
   const [pin, setPin] = useState<number>(1234567);
   const [amount, setAmount] = useState<number>(1);
@@ -16,7 +22,7 @@ const Home: React.FC = () => {
     <div className="home">
       <h1 className="home__title">Kahoot Hack Durio</h1>
       <div>
-        The greatest <a href={`${config.kahootPlayURL}`}>Kahoot</a> Hack the
+        The greatest <a href={`${config.kahootPlayURL}`}>Kahoot</a> Flooder the
         world has ever seen.
       </div>
       <div className="home__content">
@@ -67,6 +73,15 @@ const Home: React.FC = () => {
         />
         <div className="home__content__notification">{floodResult}</div>
       </div>
+      <video
+        className="home__video"
+        autoPlay
+        src={`${homeVideos[Math.floor(Math.random() * homeVideos.length)]}`}
+        poster="/wp-content/themes/kahoot2017/assets/img/placeholder/illu_host2b.svg"
+        loop
+        playsInline
+        muted
+      ></video>
     </div>
   );
 };
