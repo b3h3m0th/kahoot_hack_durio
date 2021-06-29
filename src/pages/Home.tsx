@@ -21,9 +21,11 @@ const Home: React.FC = () => {
   return (
     <div className="home">
       <h1 className="home__title">Kahoot Hack Durio</h1>
-      <div>
+      <div className="home__subtitle">
         The greatest <a href={`${config.kahootPlayURL}`}>Kahoot</a> Flooder the
-        world has ever seen.
+        world has ever seen. <br />
+        Remember you can only use the same PIN once per bot. Change the Bot Name
+        Prefix if you want to re-flood.
       </div>
       <div className="home__content">
         <Input

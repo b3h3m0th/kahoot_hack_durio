@@ -7,6 +7,10 @@
     color: var(--color-purple);
   }
 
+  &__subtitle {
+    max-width: 500px;
+  }
+
   &__content {
     margin-top: 30px;
 
