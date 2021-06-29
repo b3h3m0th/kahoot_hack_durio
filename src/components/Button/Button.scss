@@ -1,4 +1,5 @@
 .button {
+  position: relative;
   padding: 10px 20px 10px 20px;
   margin: 10px;
   background-color: #000;
@@ -7,9 +8,36 @@
   border: 0;
   cursor: pointer;
   background-color: var(--color-purple);
+  border-radius: 0.25rem;
+  transition: 0.3s;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    bottom: -0.1875em;
+    background-color: var(--color-purple-shadow);
+    z-index: -1;
+    border-radius: 0.25em;
+    transition: 0.3s;
+  }
+
+  &:active {
+    top: 3px;
+  }
+
+  &:active::after {
+    display: none;
+  }
 
   &:disabled {
-    opacity: 0.5;
+    background-color: var(--color-error);
     cursor: not-allowed;
+  }
+
+  &:disabled::after {
+    background-color: var(--color-error-shadow);
   }
 }
