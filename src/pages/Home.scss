@@ -1,6 +1,12 @@
 .home {
   background-color: var(--color-purple);
+
   &__content {
     margin-top: 30px;
+
+    &__notification {
+      padding-left: 10px;
+      height: 50px;
+    }
   }
 }

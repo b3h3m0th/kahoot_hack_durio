@@ -1,18 +1,31 @@
 import axios from "axios";
-export default class KahootLogic {
-  static async flood(pin: number, amount: number): Promise<any> {
-    try {
-      const floodResponse = await axios.post(
-        `${`${process.env.REACT_APP_SERVER_URL}/flood`}`,
-        {
-          pin,
-          amount,
-        }
-      );
 
-      return floodResponse.data;
+export enum FloodResult {
+  "success" = "Bots Injection Requests have been sent successfully!",
+  "fail" = "An error occured while injecting the bots!",
+  "none" = "",
+}
+export default class Kahoot {
+  static async flood(
+    pin: number,
+    amount: number,
+    name: string,
+    setResult: React.Dispatch<React.SetStateAction<FloodResult>>
+  ): Promise<any> {
+    const timeout = 7000;
+    try {
+      await axios.post(`${`${process.env.REACT_APP_SERVER_URL}/flood`}`, {
+        pin,
+        amount,
+        name,
+      });
+
+      setResult(FloodResult.success);
+      return setTimeout(() => setResult(FloodResult.none), timeout);
     } catch (err) {
       console.log(err);
+      setResult(FloodResult.fail);
+      return setTimeout(() => setResult(FloodResult.none), timeout);
     }
   }
 }

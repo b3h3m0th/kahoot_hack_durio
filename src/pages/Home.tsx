@@ -3,11 +3,13 @@ import "./Home.scss";
 import Input from "../components/Input/Input";
 import config from "../config";
 import Button from "../components/Button/Button";
-import KahootLogic from "../logic/Kahoot";
+import Kahoot, { FloodResult } from "../logic/Kahoot";
 
 const Home: React.FC = () => {
   const [pin, setPin] = useState<number>(1234567);
   const [amount, setAmount] = useState<number>(1);
+  const [prefix, setPrefix] = useState<string>("MyDurio");
+  const [floodResult, setFloodResult] = useState<FloodResult>(FloodResult.none);
 
   return (
     <div className="home">
@@ -41,14 +43,23 @@ const Home: React.FC = () => {
           max={config.maxBotAmount}
           min={1}
         />
+        <Input
+          label={"Bot Prefix"}
+          name="bot_prefix"
+          placeholder="Bot Prefix"
+          type="text"
+          value={prefix}
+          onChange={(e) => setPrefix(e.target.value)}
+        />
         <Button
           text="FLOOD!"
           onClick={() => {
             (async () => {
-              await KahootLogic.flood(pin, amount);
+              await Kahoot.flood(pin, amount, prefix, setFloodResult);
             })();
           }}
         />
+        <div className="home__content__notification">{floodResult}</div>
       </div>
     </div>
   );
