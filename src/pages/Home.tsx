@@ -5,8 +5,6 @@ import config from "../config";
 import Button from "../components/Button/Button";
 import Kahoot, { FloodResult } from "../logic/Kahoot";
 
-import kahootLogoDistorted from "../assets/img/kahoot_logo_distorted.png";
-
 const homeVideos = [
   "https://kahoot.com/files/2019/07/kc_1.webm",
   "https://kahoot.com/files/2019/07/kc2_2b.webm",
