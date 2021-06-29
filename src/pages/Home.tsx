@@ -23,7 +23,8 @@ const Home: React.FC = () => {
   return (
     <div className="home">
       <h1 className="home__title">
-        <img src={kahootLogoDistorted} alt="" /> Kahoot Hack Durio
+        <img className="home__title__img" src={kahootLogoDistorted} alt="yes" />{" "}
+        Kahoot Hack Durio
       </h1>
       <div>
         The greatest <a href={`${config.kahootPlayURL}`}>Kahoot</a> Flooder the
