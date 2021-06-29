@@ -9,6 +9,7 @@ const Home: React.FC = () => {
   const [pin, setPin] = useState<number>(1234567);
   const [amount, setAmount] = useState<number>(1);
   const [prefix, setPrefix] = useState<string>("MyDurio");
+  const [isFlooding, setIsFlodding] = useState<boolean>(false);
   const [floodResult, setFloodResult] = useState<FloodResult>(FloodResult.none);
 
   return (
@@ -52,10 +53,13 @@ const Home: React.FC = () => {
           onChange={(e) => setPrefix(e.target.value)}
         />
         <Button
+          disabled={isFlooding}
           text="FLOOD!"
           onClick={() => {
             (async () => {
+              setIsFlodding(true);
               await Kahoot.flood(pin, amount, prefix, setFloodResult);
+              setIsFlodding(false);
             })();
           }}
         />

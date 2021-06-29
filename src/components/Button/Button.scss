@@ -7,4 +7,9 @@
   border: 0;
   cursor: pointer;
   background-color: var(--color-purple);
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
