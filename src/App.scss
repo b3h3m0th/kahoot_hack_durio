@@ -32,8 +32,13 @@ footer {
   align-items: center;
   background-color: var(--color-grey);
 
-  .star-info {
+  .star-info,
+  .issue-info {
     color: var(--color-white);
+
+    &__discord-tag {
+      cursor: pointer;
+    }
 
     a {
       color: var(--color-white);

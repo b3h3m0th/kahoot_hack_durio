@@ -5,4 +5,6 @@ export default {
   pinLength: 7,
   maxBotAmount: 50,
   projectGithubURL: "https://github.com/b3h3m0th/kahoot_hack_durio",
+  discordURL: "https://discord.com",
+  discordTag: "Behemoth#4026",
 } as const;

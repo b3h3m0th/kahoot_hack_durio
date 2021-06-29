@@ -36,6 +36,17 @@ const App: React.FC = () => {
           Go ⭐ this project on my{" "}
           <a href={`${config.projectGithubURL}`}>Github</a> :D
         </div>
+        <div className="issue-info">
+          If you face any problems please open an issue on{" "}
+          <a href={`${config.projectGithubURL}`}>Github</a> or contact me via{" "}
+          <a href={`${config.discordURL}`}>Discord</a>{" "}
+          <span
+            className="issue-info__discord-tag"
+            onClick={() => navigator.clipboard.writeText(config.discordTag)}
+          >
+            ({config.discordTag})
+          </span>
+        </div>
       </footer>
     </>
   );
