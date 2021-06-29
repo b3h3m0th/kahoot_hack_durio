@@ -53,7 +53,7 @@ const Home: React.FC = () => {
           min={1}
         />
         <Input
-          label={"Bot Prefix"}
+          label={"Bot Name Prefix"}
           name="bot_prefix"
           placeholder="Bot Prefix"
           type="text"
