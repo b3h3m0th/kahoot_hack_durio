@@ -36,9 +36,11 @@ const Home: React.FC = () => {
           value={amount}
           onChange={(e) =>
             setAmount(
-              +e.target.value > config.maxBotAmount
-                ? config.maxBotAmount
-                : +e.target.value
+              +e.target.value < config.maxBotAmount
+                ? +e.target.value < 1
+                  ? 1
+                  : +e.target.value
+                : config.maxBotAmount
             )
           }
           max={config.maxBotAmount}
