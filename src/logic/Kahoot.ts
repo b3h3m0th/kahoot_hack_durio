@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export enum FloodResult {
-  "success" = "Bots Injection Requests have been sent successfully!",
-  "fail" = "An error occured while injecting the bots!",
+  "success" = "✔️ Bots Injection Requests have been sent successfully!",
+  "fail" = "❌ An error occured while injecting the bots! Check the PIN you entered!",
   "none" = "",
 }
 export default class Kahoot {
@@ -12,7 +12,7 @@ export default class Kahoot {
     name: string,
     setResult: React.Dispatch<React.SetStateAction<FloodResult>>
   ): Promise<any> {
-    const timeout = 7000;
+    var timeout = 10000;
     try {
       await axios.post(`${`${process.env.REACT_APP_SERVER_URL}/flood`}`, {
         pin,
