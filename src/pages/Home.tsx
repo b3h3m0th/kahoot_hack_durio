@@ -5,7 +5,7 @@ import config from "../config";
 import Button from "../components/Button/Button";
 import Kahoot, { FloodResult } from "../logic/Kahoot";
 
-const kahootLogoDistorted = require("../assets/img/kahoot_logo_distorted.png");
+import kahootLogoDistorted from "../assets/img/kahoot_logo_distorted.png";
 
 const homeVideos = [
   "https://kahoot.com/files/2019/07/kc_1.webm",
@@ -22,10 +22,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="home">
-      <h1 className="home__title">
-        <img className="home__title__img" src={kahootLogoDistorted} alt="yes" />{" "}
-        Kahoot Hack Durio
-      </h1>
+      <h1 className="home__title">Kahoot Hack Durio</h1>
       <div>
         The greatest <a href={`${config.kahootPlayURL}`}>Kahoot</a> Flooder the
         world has ever seen.
