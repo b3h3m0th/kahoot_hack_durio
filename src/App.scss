@@ -5,12 +5,37 @@ body {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
 
 .app {
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+footer {
+  position: absolute;
+  bottom: -10vh;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--color-grey);
+
+  .star-info {
+    color: var(--color-white);
+
+    a {
+      color: var(--color-white);
+    }
+  }
 }

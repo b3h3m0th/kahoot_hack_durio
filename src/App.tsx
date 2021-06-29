@@ -19,17 +19,25 @@ const pages: { [key: string]: React.FC<any> } = {
 
 const App: React.FC = () => {
   return (
-    <div className="app">
-      <Router>
-        <Switch>
-          <Route path={`/${config._v}`} component={pages.home}></Route>
-          <Route
-            path={`/`}
-            component={() => <Redirect to={`/${config._v}`} />}
-          ></Route>
-        </Switch>
-      </Router>
-    </div>
+    <>
+      <div className="app">
+        <Router>
+          <Switch>
+            <Route path={`/${config._v}`} component={pages.home}></Route>
+            <Route
+              path={`/`}
+              component={() => <Redirect to={`/${config._v}`} />}
+            ></Route>
+          </Switch>
+        </Router>
+      </div>
+      <footer>
+        <div className="star-info">
+          Go ⭐ this project on my{" "}
+          <a href={`${config.projectGithubURL}`}>Github</a> :D
+        </div>
+      </footer>
+    </>
   );
 };
 
