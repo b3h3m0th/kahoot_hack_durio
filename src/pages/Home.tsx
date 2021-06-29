@@ -71,7 +71,9 @@ const Home: React.FC = () => {
             })();
           }}
         />
-        <div className="home__content__notification">{floodResult}</div>
+        <div className="home__content__notification">
+          {isFlooding ? "Flooding in progress..." : floodResult}
+        </div>
       </div>
       <video
         className="home__video"
