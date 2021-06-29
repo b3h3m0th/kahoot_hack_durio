@@ -10,6 +10,7 @@ import config from "./config";
 
 // pages
 import Home from "./pages/Home";
+import { useState } from "react";
 
 require("dotenv").config();
 
@@ -18,6 +19,8 @@ const pages: { [key: string]: React.FC<any> } = {
 };
 
 const App: React.FC = () => {
+  const [copiedDiscord, setCopiedDiscord] = useState<string>(config.discordTag);
+
   return (
     <>
       <div className="app">
@@ -42,9 +45,13 @@ const App: React.FC = () => {
           <a href={`${config.discordURL}`}>Discord</a>{" "}
           <span
             className="issue-info__discord-tag"
-            onClick={() => navigator.clipboard.writeText(config.discordTag)}
+            onClick={() => {
+              navigator.clipboard.writeText(config.discordTag);
+              setCopiedDiscord("Copied!");
+              setTimeout(() => setCopiedDiscord(config.discordTag), 3000);
+            }}
           >
-            ({config.discordTag})
+            ({copiedDiscord})
           </span>
         </div>
       </footer>

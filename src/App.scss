@@ -34,6 +34,7 @@ footer {
 
   .star-info,
   .issue-info {
+    transition: 1s;
     color: var(--color-white);
 
     &__discord-tag {
