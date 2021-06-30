@@ -1,7 +1,14 @@
 .home {
+  box-sizing: border-box;
+  position: absolute;
   width: 100%;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  height: 90vh;
+  bottom: 10vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  padding-left: 20%;
 
   &__title {
     color: var(--color-purple);
@@ -24,7 +31,9 @@
 
   &__video {
     position: absolute;
-    right: -100px;
-    bottom: -37px;
+    // left: 350px;
+    // bottom: 0;
+    bottom: 10vh;
+    right: 15%;
   }
 }
