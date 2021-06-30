@@ -22,8 +22,11 @@ const Home: React.FC = () => {
     <div className="home">
       <h1 className="home__title">Kahoot Hack Durio</h1>
       <div className="home__subtitle">
-        The greatest <a href={`${config.kahootPlayURL}`}>Kahoot</a> Flooder the
-        world has ever seen. <br />
+        The greatest{" "}
+        <a href={`${config.kahootPlayURL}`} target="_blank" rel="noreferrer">
+          Kahoot
+        </a>{" "}
+        Flooder the world has ever seen. <br />
         Remember you can only use the same PIN once per bot. Change the Bot Name
         Prefix if you want to re-flood.
       </div>
@@ -79,8 +82,8 @@ const Home: React.FC = () => {
       </div>
       <video
         className="home__video"
-        autoPlay
         src={`${homeVideos[Math.floor(Math.random() * homeVideos.length)]}`}
+        autoPlay
         poster="/wp-content/themes/kahoot2017/assets/img/placeholder/illu_host2b.svg"
         loop
         playsInline
