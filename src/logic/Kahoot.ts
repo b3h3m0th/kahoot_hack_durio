@@ -1,8 +1,9 @@
 import axios from "axios";
 
 export enum FloodResult {
-  "success" = "✔️ Bots Injection Requests have been sent successfully!",
+  "success" = "✔️ Bots injection requests have been sent successfully!",
   "fail" = "❌ An error occured while flooding! Check your game PIN!",
+  "canceled" = "Bot injection request canceled!",
   "none" = "",
 }
 export default class Kahoot {
