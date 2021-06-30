@@ -84,7 +84,6 @@ const Home: React.FC = () => {
         className="home__video"
         src={`${homeVideos[Math.floor(Math.random() * homeVideos.length)]}`}
         autoPlay
-        poster="/wp-content/themes/kahoot2017/assets/img/placeholder/illu_host2b.svg"
         loop
         playsInline
         muted
