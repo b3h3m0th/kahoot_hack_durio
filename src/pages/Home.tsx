@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Home.scss";
 import Input from "../components/Input/Input";
 import config from "../config";
