@@ -17,6 +17,12 @@ const Home: React.FC = () => {
   const [prefix, setPrefix] = useState<string>("MyDurio");
   const [isFlooding, setIsFlodding] = useState<boolean>(false);
   const [floodResult, setFloodResult] = useState<FloodResult>(FloodResult.none);
+  const homeVideo = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    homeVideo!.current!.src =
+      homeVideos[Math.floor(Math.random() * homeVideos.length)];
+  }, []);
 
   return (
     <div className="home">
@@ -82,7 +88,7 @@ const Home: React.FC = () => {
       </div>
       <video
         className="home__video"
-        src={`${homeVideos[Math.floor(Math.random() * homeVideos.length)]}`}
+        ref={homeVideo}
         autoPlay
         loop
         playsInline
