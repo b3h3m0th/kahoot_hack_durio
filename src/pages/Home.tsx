@@ -3,7 +3,7 @@ import "./Home.scss";
 import Input from "../components/Input/Input";
 import config from "../config";
 import Button from "../components/Button/Button";
-import Kahoot, { FloodResult } from "../logic/Kahoot";
+import Kahoot, { FloodResult, NoResult, RejectResult } from "../logic/Kahoot";
 
 const homeVideos = [
   "https://kahoot.com/files/2019/07/kc_1.webm",
@@ -16,7 +16,11 @@ const Home: React.FC = () => {
   const [amount, setAmount] = useState<number>(1);
   const [prefix, setPrefix] = useState<string>("MyDurio");
   const [isFlooding, setIsFlodding] = useState<boolean>(false);
-  const [floodResult, setFloodResult] = useState<FloodResult>(FloodResult.none);
+  const [floodResult, setFloodResult] = useState<
+    FloodResult | RejectResult | NoResult
+  >(NoResult.none);
+  const [botsInjected, setBotsInjected] = useState<boolean>(false);
+
   const homeVideo = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
@@ -77,11 +81,27 @@ const Home: React.FC = () => {
           onClick={() => {
             (async () => {
               setIsFlodding(true);
-              await Kahoot.flood(pin, amount, prefix, setFloodResult);
+              await Kahoot.flood(
+                pin,
+                amount,
+                prefix,
+                setFloodResult,
+                setBotsInjected
+              );
               setIsFlodding(false);
             })();
           }}
         />
+        {botsInjected && (
+          <Button
+            text="REMOVE BOTS"
+            onClick={() =>
+              (async () => {
+                await Kahoot.reject(setFloodResult, setBotsInjected);
+              })()
+            }
+          />
+        )}
         <div className="home__content__notification">
           {isFlooding ? "Flooding in progress..." : floodResult}
         </div>
