@@ -2,7 +2,10 @@
   <img src="https://raw.githubusercontent.com/b3h3m0th/kahoot_hack_durio/master/src/assets/img/banner.png"/>
 </p>
 
-[![Kahoot Hack Durio](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://kahoot-hack-durio.netlify.app/)
+<p align="center">
+<img src="https://img.shields.io/website?down_color=red&down_message=down&up_color=green&up_message=up&url=https%3A%2F%2Fkahoot-hack-durio.netlify.app%2F_v2" />
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+</p>
 
 - 🌐 [https://kahoot-hack-durio.netlify.app](https://kahoot-hack-durio.netlify.app)
 
