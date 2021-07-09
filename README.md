@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-<b><a href="https://kahoot-hack-durio.netlify.app">kahoot-hack-durio.netlify.app</a></b><br/><br/>
+<b><a href="https://kahoot-hack-durio.netlify.app" target="_tab">kahoot-hack-durio.netlify.app</a></b><br/><br/>
 
 _Kahoot Hack Durio is a simple yet very powerful [Kahoot!](https://kahoot.com) flooder written in TypeScript that allows you to add a massive number of clients (bot players) to a kahoot game._
 
