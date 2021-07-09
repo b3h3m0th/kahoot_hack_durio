@@ -15,4 +15,3 @@ _Kahoot Hack Durio is a simple yet very powerful [Kahoot!](https://kahoot.com) f
 Built with a deprecated package called [kahoot.js-updated](https://github.com/theusaf/kahoot.js-updated).
 
 </div>
-</p>
