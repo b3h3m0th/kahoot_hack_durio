@@ -17,7 +17,7 @@ export enum NoResult {
 }
 
 export default class Kahoot {
-  private static _notificationDisplayTimout = 10000;
+  private static _notificationDisplayTimout = 1000 * 10;
 
   static async getVisitorId(): Promise<string> {
     return await (
